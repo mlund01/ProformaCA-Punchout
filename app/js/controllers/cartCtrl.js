@@ -1,5 +1,20 @@
-four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451', 'Order', 'OrderConfig', 'User',
-function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
+four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451','$window', '$timeout', '$sce', 'Order', 'OrderConfig', 'User', 'Punchout',
+function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order, OrderConfig, User, Punchout) {
+
+	$scope.punchouturl = $sce.trustAsResourceUrl(Punchout.punchoutSession.PunchOutPostURL);
+	$scope.submitPunchoutOrder = function(){
+		$scope.saveChanges(function(data){
+		Punchout.getForm(function(form){
+			$scope.punchoutForm = form;
+			$timeout(function(){
+				$window.document.getElementById('punchoutForm').submit();
+			}, 10);
+		}, function(err){})
+		}, true);
+		console.log("submit!");
+		return false;
+	}
+
 	var isEditforApproval = $routeParams.id != null && $scope.user.Permissions.contains('EditApprovalOrder');
 	if (isEditforApproval) {
 		Order.get($routeParams.id, function(order) {
@@ -40,7 +55,7 @@ function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
 		}
 	};
 
-	$scope.saveChanges = function(callback) {
+	$scope.saveChanges = function(callback, disableComplete) {
 		$scope.actionMessage = null;
 		$scope.errorMessage = null;
 		if($scope.currentOrder.LineItems.length == $451.filter($scope.currentOrder.LineItems, {Property:'Selected', Value: true}).length) {
@@ -52,8 +67,9 @@ function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
 			Order.save($scope.currentOrder,
 				function(data) {
 					$scope.currentOrder = data;
-					$scope.displayLoadingIndicator = false;
 					if (callback) callback();
+					if(disableComplete) return;
+					$scope.displayLoadingIndicator = false;
 					$scope.actionMessage = 'Your Changes Have Been Saved!';
 				},
 				function(ex) {

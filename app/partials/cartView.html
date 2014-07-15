@@ -159,7 +159,8 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar-fixed-bottom">
+		</form>
+			<div class="navbar-fixed-bottom">
                 <div class="alert-warning text-center" style="padding: 10px;" ng-if="currentOrder.RepeatError">
                     {{'Some items were not added to your repeat order' | r}}: {{currentOrder.RepeatError}}
                 </div>
@@ -193,6 +194,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <ul>
                     <li>
                         <button class="btn btn-danger" ng-click="currentOrder.Status == 'AwaitingApproval' ? cancelEdit() : cancelOrder()">
@@ -207,16 +209,21 @@
                         </button>
                     </li>
                     <li>
-                        <button class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-click="checkOut()" ng-disabled="cart.$invalid">
+                        <button class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-click="submitPunchoutOrder()" ng-disabled="cart.$invalid">
                             <i ng-show="cart.$invalid" class="fa fa-warning"></i>
-                            <span>{{'Check Out' | r}} {{window.outerWidth}}</span>
+                            <span>{{'Submit' | r}} {{window.outerWidth}}</span>
                         </button>
                     </li>
                 </ul>
-
             </div>
-        </form>
     </div>
+	url:
+
+	<form id="punchoutForm" method="POST" action="{{punchouturl}}">
+		<div ng-repeat="(key, val) in punchoutForm">
+			<input type="hidden" name="{{key}}" value="{{val}}" />
+		</div>
+	</form>
     <cartprint class="visible-print" />
 </section>
 
