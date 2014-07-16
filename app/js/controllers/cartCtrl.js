@@ -1,7 +1,8 @@
 four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451','$window', '$timeout', '$sce', 'Order', 'OrderConfig', 'User', 'Punchout',
 function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order, OrderConfig, User, Punchout) {
 
-	$scope.punchouturl = $sce.trustAsResourceUrl(Punchout.punchoutSession.PunchOutPostURL);
+	if($scope.PunchoutSession.PunchoutOperation != "Inspect")
+		$scope.punchouturl = $sce.trustAsResourceUrl(Punchout.punchoutSession.PunchOutPostURL);
 	$scope.submitPunchoutOrder = function(){
 		$scope.saveChanges(function(data){
 		Punchout.getForm(function(form){
@@ -11,10 +12,7 @@ function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order,
 			}, 10);
 		}, function(err){})
 		}, true);
-		console.log("submit!");
-		return false;
 	}
-
 	var isEditforApproval = $routeParams.id != null && $scope.user.Permissions.contains('EditApprovalOrder');
 	if (isEditforApproval) {
 		Order.get($routeParams.id, function(order) {

@@ -160,7 +160,8 @@
                 </div>
             </div>
 		</form>
-			<div class="navbar-fixed-bottom">
+
+			<div ng-show="PunchoutSession.PunchOutOperation != 'Inspect'" class="navbar-fixed-bottom">
                 <div class="alert-warning text-center" style="padding: 10px;" ng-if="currentOrder.RepeatError">
                     {{'Some items were not added to your repeat order' | r}}: {{currentOrder.RepeatError}}
                 </div>
@@ -217,7 +218,7 @@
                 </ul>
             </div>
     </div>
-	url:
+
 
 	<form id="punchoutForm" method="POST" action="{{punchouturl}}">
 		<div ng-repeat="(key, val) in punchoutForm">

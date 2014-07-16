@@ -26,6 +26,8 @@
             <branding />
         </section>
         <section class="container-view">
+			session:{{PunchoutSession}}
+			<a href="order/{{user.CurrentOrderID}}">order</a>
             <ng-view autoscroll />
         </section>
         <section class="hidden-print">

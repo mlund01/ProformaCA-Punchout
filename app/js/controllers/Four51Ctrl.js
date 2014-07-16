@@ -1,6 +1,7 @@
-four51.app.controller('Four51Ctrl', ['$scope', '$route', '$location', '$451', 'User', 'Order', 'Security', 'OrderConfig', 'Category', 'AppConst',
-function ($scope, $route, $location, $451, User, Order, Security, OrderConfig, Category, AppConst) {
-    $scope.AppConst = AppConst;
+four51.app.controller('Four51Ctrl', ['$scope', '$route', '$location', '$451', 'Punchout', 'User', 'Order', 'Security', 'OrderConfig', 'Category', 'AppConst',
+function ($scope, $route, $location, $451, Punchout, User, Order, Security, OrderConfig, Category, AppConst) {
+    $scope.PunchoutSession = Punchout.punchoutSession;
+	$scope.AppConst = AppConst;
 	$scope.scroll = 0;
 	$scope.isAnon = $451.isAnon; //need to know this before we have access to the user object
 	$scope.Four51User = Security;
