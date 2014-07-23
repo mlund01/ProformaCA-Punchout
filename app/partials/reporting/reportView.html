@@ -11,9 +11,14 @@
                     <div class="panel-body">
                         <lineitemreport ng-if="report.ReportType == 'LineItem'" />
                         <orderreport ng-if="report.ReportType == 'Order'" />
+                        <inventoryreport ng-if="report.ReportType == 'Inventory'" />
+                        <pendingapprovalreport ng-if="report.ReportType == 'PendingApproval'" />
+                        <accountStatusReport ng-if="report.ReportType == 'SpendingAccountStatus'" />
+                        <accounttransactionreport ng-if="report.ReportType == 'SpendingAccountTransaction'" />
+                        <shipmentreport ng-if="report.ReportType == 'Shipment'" />
                     </div>
                 </tab>
-                <tab>
+                <tab disabled="!report.ID">
                     <tab-heading ng-click="downloadReport(report)">
                         {{'Report' | r}} {{'Data' | r}}
                     </tab-heading>
@@ -21,11 +26,11 @@
                         <div class="table-responsive hidden-xs">
                             <table class="table">
                                 <tr>
-                                    <td ng-repeat="(key, value) in report.DisplayColumns">{{value | r}}</td>
+                                    <td ng-repeat="(key, value) in report.DataColumns">{{report.DisplayColumns[value] | r}}</td>
                                 </tr>
                                 <tr ng-repeat="row in report.Data | paginate:(settings.currentPage-1) * settings.pageSize | limitTo:settings.pageSize">
                                     <td ng-repeat="header in report.DataColumns">
-                                        {{row[header]}}
+                                        {{row[header] | r}}
                                     </td>
                                 </tr>
                             </table>

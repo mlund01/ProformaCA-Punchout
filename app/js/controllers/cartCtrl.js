@@ -19,7 +19,7 @@ function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order,
 			$scope.currentOrder = order;
 		});
 	}
-
+	
 	$scope.currentDate = new Date();
 	$scope.errorMessage = null;
 	$scope.continueShopping = function() {
