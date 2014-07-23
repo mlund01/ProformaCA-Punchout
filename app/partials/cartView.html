@@ -6,6 +6,10 @@
                 <li class="pull-right" ng-click="onPrint()"><span><i class="fa fa-print text-primary" rel="tooltip" title="{{'Print' | r}}" ></i></span></li>
             </ul>
         </nav>
+		<div ng-show="user.Permissions.contains('Comments')">Comments: <input type="text" ng-model="currentOrder.Comments"> <br></div>
+		<div ng-show="user.Permissions.contains('EditPOID')">Order ID: <input type="text" ng-model="currentOrder.ExternalID"><br></div>
+		<div ng-show="user.Permissions.contains('CostCenterPerOrder')">Cost Center: <input type="text" ng-model="currentOrder.CostCenter"><br></div>
+
         <form name="cart" novalidate="">
             <loadingindicator  ng-show="displayLoadingIndicator" title="{{'Please wait while we save your order' | r}}"/>
             <div>
