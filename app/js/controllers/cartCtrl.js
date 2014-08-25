@@ -44,7 +44,7 @@ function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order,
 						$location.path('catalog');
 					});
 					$scope.displayLoadingIndicator = false;
-					$scope.actionMessage = 'Your Changes Have Been Saved!';
+					$scope.actionMessage = 'Your Changes Have Been Saved';
 				},
 				function(ex) {
 					$scope.actionMessage = 'An error occurred: ' + ex.Message;
@@ -93,7 +93,7 @@ function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order,
 						});
 					}
 					$scope.displayLoadingIndicator = false;
-					$scope.actionMessage = 'Your Changes Have Been Saved!';
+					$scope.actionMessage = 'Your Changes Have Been Saved';
 				},
 				function (ex) {
 					$scope.errorMessage = ex.Message.replace(/\<<Approval Page>>/g, 'Approval Page');
