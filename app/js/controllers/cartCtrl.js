@@ -1,4 +1,4 @@
-four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451', 'Order', 'OrderConfig', 'User', 'Punchout'
+four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451', 'Order', 'OrderConfig', 'User', 'Punchout',
 function ($scope, $routeParams, $location, $451, Order, OrderConfig, User, Punchout) {
 
 	if($scope.PunchoutSession.PunchoutOperation != "Inspect")
