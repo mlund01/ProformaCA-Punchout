@@ -27,8 +27,8 @@ function ($scope, $route, $location, $451, Punchout, User, Order, Security, Orde
 		if (Security.isAuthenticated()) {
 			User.get(function (user) {
 				$scope.user = user;
-               			$scope.user.Culture.CurrencyPrefix = XLATService.getCurrentLanguage(user.Culture.Name)[1];
-                		$scope.user.Culture.DateFormat = XLATService.getCurrentLanguage(user.Culture.Name)[2];
+                $scope.user.Culture.CurrencyPrefix = XLATService.getCurrentLanguage(user.CultureUI, user.Culture.Name)[1];
+                $scope.user.Culture.DateFormat = XLATService.getCurrentLanguage(user.CultureUI, user.Culture.Name)[2];
 				if($scope.PunchoutSession.PunchOutOperation == 'Inspect') $location.path('order/' + $scope.user.CurrentOrderID);
 
 	            if (!$scope.user.TermsAccepted)

@@ -3,7 +3,7 @@
         <div class="panel panel-default">
             <loadingindicator ng-show="displayLoadingIndicator" />
             <div class="panel-heading">
-                <h3 ng-if="!report.ID" class="panel-title panel-primary">{{report.ID ? report.Name : (report.ReportType | r | xlat)}}</h3>
+                <h3 ng-if="!report.ID" class="panel-title panel-primary">{{report.ID ? report.Name : (report.ReportTypeName | r | xlat)}}</h3>
             </div>
             <tabset ng-show="report">
                 <tab>
@@ -44,7 +44,8 @@
                     <div class="panel-footer">
                         <div ng-show="settings.listCount > settings.pageSize">
                             <pagination page="settings.currentPage" max-size="8" rotate="false" boundary-links="true" total-items="settings.listCount"
-                                        items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}" last-text="{{'Last' | xlat}}"></pagination>
+                                        items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}"
+                                        first-text="{{'First' | xlat}}" last-text="{{'Last' | xlat}}"></pagination>
                         </div>
                         <button ng-hide="errorMessage" type="button" class="btn btn-primary pull-right" ng-click="getDownload()">{{'Download' | r | xlat}}</button>
                     </div>

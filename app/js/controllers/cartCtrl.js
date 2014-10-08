@@ -1,5 +1,5 @@
-four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451','$window', '$timeout', '$sce', 'Order', 'OrderConfig', 'User', 'Punchout','AddToOrder',
-function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order, OrderConfig, User, Punchout, AddToOrder) {
+four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451', 'Order', 'OrderConfig', 'User', 'Punchout'
+function ($scope, $routeParams, $location, $451, Order, OrderConfig, User, Punchout) {
 
 	if($scope.PunchoutSession.PunchoutOperation != "Inspect")
 		$scope.punchouturl = $sce.trustAsResourceUrl(Punchout.punchoutSession.PunchOutPostURL);
@@ -33,7 +33,6 @@ function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order,
 
 	$scope.cancelOrder = function() {
 		if (confirm('Are you sure you wish to cancel your order?') == true) {
-            AddToOrder.clearLineItems();
 			$scope.displayLoadingIndicator = true;
 			$scope.actionMessage = null;
 			Order.delete($scope.currentOrder,
@@ -83,7 +82,6 @@ function ($scope, $routeParams, $location, $451, $window, $timeout, $sce, Order,
 		if (confirm('Are you sure you wish to remove this item from your cart?') == true) {
 			Order.deletelineitem($scope.currentOrder.ID, item.ID,
 				function(order) {
-                    AddToOrder.removeLineItems(item);
 					$scope.currentOrder = order;
 					Order.clearshipping($scope.currentOrder);
 					if (!order) {

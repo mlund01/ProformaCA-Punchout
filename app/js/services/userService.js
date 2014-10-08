@@ -88,6 +88,21 @@ four51.app.factory('User', ['$q', '$rootScope', '$resource', '$451', 'Security',
 		);
 	};
 
+	var _startneworder = function(user, success, error) {
+		user.CurrentOrderID = null;
+		$resource($451.api('/user/neworder')).save().$promise.then(
+			function(user) {
+				store.set(_cacheName, user);
+				$rootScope.$broadcast('event:orderUpdate', null);
+				_then(success, user);
+			},
+			function(ex) {
+				if (error)
+					error(Error.format(ex));
+			}
+		);
+	};
+
     var _logout = function() {
         store.clear();
         Security.logout();
@@ -100,6 +115,7 @@ four51.app.factory('User', ['$q', '$rootScope', '$resource', '$451', 'Security',
         logout: _logout,
 	    refresh: _refresh,
 	    reset: _reset,
-	    setcurrentorder: _setorder
+	    setcurrentorder: _setorder,
+	    startneworder: _startneworder
     };
 }]);

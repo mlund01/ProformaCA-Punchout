@@ -24,7 +24,7 @@ four51.app.directive('quantityfield', ['$451', 'ProductDisplayService', function
                     scope.calculated(lineitem);
             };
             scope.validQuantityAddToOrder = function(value, lineItem){
-
+				if (!value) return;
                 var variant = lineItem.Variant;
                 var product = lineItem.Product;
                 var priceSchedule = lineItem.PriceSchedule;
@@ -68,7 +68,7 @@ four51.app.directive('quantityfield', ['$451', 'ProductDisplayService', function
                 else{
                     var qtyAvail = (product.IsVariantLevelInventory ? variant.QuantityAvailable : product.QuantityAvailable) + (lineItem.OriginalQuantity || 0);
 
-                    if(qtyAvail < value && product.AllowExceedInventory == false){
+                    if(qtyAvail < value && product.AllowExceedInventory == false && priceSchedule.OrderType != 'Replenishment'){
                         scope.lineitem.qtyError = "cannot exceed the Quantity Available of " +  qtyAvail;
                         scope.valid = false;
                     }

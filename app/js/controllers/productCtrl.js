@@ -18,22 +18,21 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 		})
 	};
 	function setDefaultQty(lineitem) {
-		$scope.LineItem.Quantity = lineitem.Product.StandardPriceSchedule.DefaultQuantity > 0 ? lineitem.Product.StandardPriceSchedule.DefaultQuantity : null;
+		if (lineitem.PriceSchedule && lineitem.PriceSchedule.DefaultQuantity != 0)
+			$scope.LineItem.Quantity = lineitem.PriceSchedule.DefaultQuantity;
 	}
 	function init(searchTerm, callback) {
 		ProductDisplayService.getProductAndVariant($routeParams.productInteropID, $routeParams.variantInteropID, function (data) {
 			$scope.LineItem.Product = data.product;
 			$scope.LineItem.Variant = data.variant;
-			setDefaultQty($scope.LineItem);
 			ProductDisplayService.setNewLineItemScope($scope);
 			ProductDisplayService.setProductViewScope($scope);
+			setDefaultQty($scope.LineItem);
 			$scope.$broadcast('ProductGetComplete');
 			$scope.loadingIndicator = false;
 			$scope.setAddToOrderErrors();
 			if (angular.isFunction(callback))
 				callback();
-			if (!$scope.currentOrder)
-				$scope.setOrderType('Standard');
 		}, $scope.settings.currentPage, $scope.settings.pageSize, searchTerm);
 	}
 	$scope.$watch('settings.currentPage', function(n, o) {
@@ -72,7 +71,7 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 			return;
 		}
 		if(!$scope.currentOrder){
-			$scope.currentOrder = {};
+			$scope.currentOrder = { };
 			$scope.currentOrder.LineItems = [];
 		}
 		if (!$scope.currentOrder.LineItems)
@@ -81,10 +80,12 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 			angular.forEach($scope.variantLineItems, function(item){
 				if(item.Quantity > 0){
 					$scope.currentOrder.LineItems.push(item);
+					$scope.currentOrder.Type = item.PriceSchedule.OrderType;
 				}
 			});
 		}else{
 			$scope.currentOrder.LineItems.push($scope.LineItem);
+			$scope.currentOrder.Type = $scope.LineItem.PriceSchedule.OrderType;
 		}
 		$scope.addToOrderIndicator = true;
 		//$scope.currentOrder.Type = (!$scope.LineItem.Product.IsVariantLevelInventory && $scope.variantLineItems) ? $scope.variantLineItems[$scope.LineItem.Product.Variants[0].InteropID].PriceSchedule.OrderType : $scope.LineItem.PriceSchedule.OrderType;
@@ -100,8 +101,9 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 				},
 				function(ex) {
 					$scope.addToOrderIndicator = false;
-					$scope.addToOrderError = ex.Message;
-					$route.reload();
+					$scope.lineItemErrors.push(ex.Detail);
+					$scope.showAddToCartErrors = true;
+					//$route.reload();
 				}
 		);
 	};
