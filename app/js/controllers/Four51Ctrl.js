@@ -23,7 +23,9 @@ function ($scope, $route, $location, $451, Punchout, User, Order, Security, Orde
 	$scope.PunchoutSession = Punchout.punchoutSession;
 	console.log("setting punchout path");
 	if($scope.PunchoutSession.PunchOutOperation == 'Edit') $location.path('cart');
-	if($scope.PunchoutSession.PunchoutLandingProduct) $location.path('product/' + $scope.PunchoutSession.PunchoutLandingProduct);
+	else if($scope.PunchoutSession.PunchoutLandingCategory) $location.path('catalog/' + $scope.PunchoutSession.PunchoutLandingCategory);
+	else if($scope.PunchoutSession.PunchoutLandingProduct) $location.path('product/' + $scope.PunchoutSession.PunchoutLandingProduct);
+
 	function init() {
 		if (Security.isAuthenticated()) {
 			User.get(function (user) {
