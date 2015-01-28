@@ -21,7 +21,7 @@ function ($scope, $route, $location, $451, Punchout, User, Order, Security, Orde
 			});
 	}
 	$scope.PunchoutSession = Punchout.punchoutSession;
-	console.log("setting punchout path");
+
 	if($scope.PunchoutSession.PunchOutOperation == 'Edit') $location.path('cart');
 	else if($scope.PunchoutSession.PunchoutLandingCategory) $location.path('catalog/' + $scope.PunchoutSession.PunchoutLandingCategory);
 	else if($scope.PunchoutSession.PunchoutLandingProduct) $location.path('product/' + $scope.PunchoutSession.PunchoutLandingProduct);
