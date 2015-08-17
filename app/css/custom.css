@@ -4,3 +4,430 @@ Theme name: My SPA Theme
 Version: 1.0
 Template: Howdy
 */
+
+body  {
+    font-family: "CA Sans-Regular";
+}
+h2, .h2 {
+    font-size: 31px;
+}
+
+h3, .h3 {
+    font-size: 25px;
+}
+
+h4, .h4 {
+    font-size: 19px;
+}
+
+h5, .h5 {
+    font-size: 15px;
+}
+
+h6, .h6 {
+    font-size: 16px;
+}
+
+
+body  {
+    font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "CA Sans-Regular";
+}
+
+@media (max-width: 768px) {
+    .nav > li  {
+        margin-top: 95px;
+    }
+    .nav-img img {
+        padding-left:25px;
+    }
+    .nav ul li .well {
+        height: 270px;
+        width: 90%;
+        margin: 0 auto 20px;
+        text-align: center;
+        border-bottom: solid 45px #e0e4e5;
+    }
+
+    .nav ul li .well img {
+        max-height: 200px;
+        width: 200px;
+    }
+    .nav ul li .well h5 {
+        margin-top: 20px;
+        font-size: 17px;
+        color: #000;
+    }
+}
+
+
+@media (max-width: 922px) {
+    .nav > li {
+        display: block;
+        float: left;
+        position: relative;
+    }
+
+    .nav-img img {
+        max-width: none;
+        padding-right: 5px;
+    }
+    .nav-text {
+        color: #FFF;
+        font-size: 36px;
+        display: inline;
+        padding-top: 80px;
+        margin-left: -7%;
+    }
+}
+
+@media (max-width: 481px) {
+    .nav > li {
+        margin-right: -5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container,
+    .container-view {
+        width: 730px;
+    }
+    .nav-text {
+        color: #FFF;
+        font-size: 35px;
+        display: inline;
+        padding-top: 80px;
+        margin-left: -10%;
+    }
+    form[name="productSearchInput"] {
+        max-width: 90%;
+        margin: 50px 0 -10px 10px;
+    }
+    .nav ul li .well {
+        height: 270px;
+        width: 300px;
+        margin: 0 auto 20px;
+        text-align: center;
+        border-bottom: solid 45px #e0e4e5;
+    }
+    .nav ul li .well img {
+        max-height: 200px;
+        width: 200px;
+    }
+    .nav ul li .well h5 {
+        margin-top: 20px;
+        font-size: 17px;
+        color: #000;
+    }
+    .cat-wrap nav.account-navigation span.expand-account-nav i {
+        position: relative;
+        bottom: -50px;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container,
+    .container-view {
+        width: 950px;
+    }
+    .container p strong {
+        font-size: 30px;
+    }
+    .nav-img img {
+        padding-right: 18px;
+    }
+    .nav-text {
+        color: #FFF;
+        font-size: 36px;
+        display: inline;
+        padding-top: 60px;
+        margin-left: -5%;
+    }
+    form[name="productSearchInput"] {
+        max-width: 90%;
+        margin: 50px 0 -10px 10px;
+    }
+    .nav ul li .well {
+        height: 335px;
+        width: 365px;
+        margin: 0 auto 20px;
+        text-align: center;
+        border-bottom: solid 45px #e0e4e5;
+    }
+    .nav ul li .well img {
+        max-height: 250px;
+        width: 250px;
+    }
+    .nav ul li .well h5 {
+        margin-top: 32px;
+        font-size: 17px;
+        color: #000;
+    }
+}
+@media (min-width: 1200px) {
+    .container,
+    .container-view {
+        width: 1150px;
+    }
+    .container p strong {
+        font-size: 36px;
+    }
+    .nav-text {
+        color: #FFF;
+        font-size: 36px;
+        display: inline;
+        padding-top: 60px;
+        margin-left: -5%;
+    }
+    form[name="productSearchInput"] {
+        max-width: 90%;
+        margin: 50px 0 -10px 10px;
+    }
+    .nav ul li .well {
+        height: 335px;
+        width: 365px;
+        margin: 0 auto 20px;
+        text-align: center;
+        border-bottom: solid 45px #e0e4e5;
+    }
+    .nav ul li .well img {
+        max-height: 250px;
+        width: 250px;
+    }
+    .nav ul li .well h5 {
+        margin-top: 32px;
+        font-size: 17px;
+        color: #000;
+    }
+}
+
+.navbar {
+    max-height: 150px;
+    min-height: 150px;
+    border-bottom-width: 0;
+}
+
+.navbar .container .navbar-nav.pull-right li a, .navbar .container-view .navbar-nav.pull-right li a {
+    padding-top: 100px;
+}
+
+
+.nav-img img {
+    display: inline;
+}
+
+.nav-img {
+    padding-top: 50px;
+}
+
+@font-face {
+    font-family: CA Sans-Regular;
+    src: url('fonts/CASans-Regular.otf?iefix')format('otf'),
+    url('fonts/CASans-Regular.woff')format('woff');
+
+}
+
+.navbar-nav ul.dropdown-menu li {
+    width: 100%;
+}
+
+/*ML Update 7/21/15*/
+.navbar-nav ul.dropdown-menu li:hover {
+    background-color: #e7e7e7;
+    color: #333;
+}
+/*Nav selections hover*/
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    text-decoration: underline;
+}
+.navbar-default .navbar-nav a:hover, .navbar-default .navbar-nav a:focus {
+    text-decoration: underline;
+}
+
+.nav ul li .well {
+    border-right: 0;
+    border-left: 0;
+}
+
+.cat-wrap nav.account-navigation span.open ul.dropdown-menu {
+    width: 160px;
+    margin: 50px 10px 0;
+}
+
+.cat-wrap nav.account-navigation span.open ul.dropdown-menu li {
+    width: 100%;
+}
+
+.cat-wrap nav.account-navigation span.expand-account-nav i {
+    margin-top: -10px;
+}
+.navbar-nav {
+    float: right;
+    font-size: 17px;
+}
+
+.navbar-nav li a {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.navbar-fixed-top.headroom.headroom--unpinned {
+    top: -150px;
+}
+
+.navbar.navbar-default {
+    transition: none;
+    left: -1px;
+    position: fixed;
+    right: -1px;
+    z-index: 1030;
+    top: -1px;
+    border-radius: 0;
+}
+
+form[name="productSearchInput"] {
+    float: right;
+    width: 80%;
+    padding-right: 10px;
+}
+
+.carousel img {
+    width: 100%;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.carousel-indicators li {
+    display: none;
+}
+
+.carousel-control {
+    display: none;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.view-form-icon .quantity div input {
+    color: #46b8da;
+}
+
+label.required {
+    color: #aaaaaa;
+}
+
+
+/*Button Colors*/
+.btn-info {
+    background-color: #53BBD4;
+}
+.btn-primary {
+    background-color: #58676D;
+}
+.btn-primary:hover {
+    background-color: #3e4c52;
+}
+
+.btn-success {
+    background-color: #22465E;
+    border-color: #1d3043;
+}
+
+.btn-success:hover {
+    background-color: #1d3043;
+}
+
+.btn-warning.disabled, .btn-warning[disabled],
+fieldset[disabled] .btn-warning, .btn-warning.disabled:hover,
+.btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus, .btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active,
+.btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active, .btn-warning.active[disabled],
+fieldset[disabled] .btn-warning.active {
+    background-color: #1d3043;
+    color: #d9534f;
+}
+
+.btn-warning:hover {
+    background-color: #212a30;
+    border-color: #212a30;
+}
+
+.btn-warning {
+    background-color: black;
+    border-color: black;
+}
+
+.btn.btn-danger {
+    background-color: black;
+    border-color: black;
+}
+.btn.btn-danger:hover {
+    background-color: #212a30;
+}
+
+/*Custom set for geostore partials html page*/
+.geostorepage .panel-header {
+    border-bottom: 1px solid #acacac
+}
+
+ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; } /*Allows show on hover for dropdowns*/
+
+ul.nav li.dropdown:hover ul.dropdown-menu li ul{ display: none; }
+
+footer {
+    background-color: #58676d;
+    bottom: 0;
+    color: #fff;
+    font-size: 12px;
+    left: 0;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+}
+
+footer div {
+    text-align: right;
+}
+
+footer div p, footer div h6 {
+    margin: 0;
+}
+
+footer div h6 {
+    margin-bottom: 3px;
+}
+
+#content {
+    margin-bottom: 125px;
+}
+
+ordershipping i.fa-check-circle, orderbilling i.fa-check-circle {
+    color: #1D3043 !important;
+}
+
+
+orderbilling i.fa-warning, ordershipping i.fa-warning {
+    color: #53bbd4 !important;
+}
+
+/*
+.view-error-message ul li span {
+    background-color: #53bbd4 !important;
+}*/
+
+ordershipping .panel-footer button:nth-of-type(1) {
+    display: none;
+}
+
+orderbilling .panel-footer button:nth-of-type(1) {
+    display: none;
+}

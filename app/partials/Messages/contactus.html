@@ -1,1 +1,37 @@
-<div class="panel-body"></div>
+<section>
+    <accountnavigation ng-show="user.Permissions.contains('ViewSelfAdmin') || user.Type == 'Customer'" />
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title panel-primary">{{('Contact' | r) + ' ' + ('Us' | r) | xlat }}</h3>
+        </div>
+        <div class="panel-body">
+            <p class="text-center">
+                <b>Can't find what you need... just ask!</b>
+                <br><br>
+                <b> Customer Service for North America</b>
+                <br><br>
+                Tiffany Howard
+                <br>
+                Director of Operations North America
+                <br>
+                (512) 410-7340 or tiffany.howard@proforma.com
+                <br>
+                Austin, Texas
+                <br><br>
+                <b> Customer Service for EMEA</b>
+                <br>
+                Natalie Hyams
+                <br>
+                Director of Operations EMEA
+                <br>
+                T: 020 8906 9444 or natalie.hyams@proforma.com
+                <br>
+                London
+                <br>
+
+            </p>
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+</section>

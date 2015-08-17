@@ -29,7 +29,7 @@
 			<ng-view autoscroll />
         </section>
         <section class="hidden-print">
-            <copyright ng-if="!user.Permissions.contains('UnBrandedSite')" />
+            <stickyfooter />
         </section>
     </section>
 </section>
@@ -53,6 +53,10 @@
     <script src="lib/angular/angular-ga-analytics.js" data-group="resources"></script>
     <script src="lib/angular/plugins/Debouncer.js" data-group="resources"></script>
     <script src="lib/angular/plugins/ngAutocomplete.js" data-group="resources"></script>
+    <script src="lib/oc/anonRouter.js" data-group="resources"></script>
+    <script src="lib/oc/ProductSearchInput.js" data-group="resources"></script>
+    <script src="lib/oc/carousel.js" data-group="resources"></script>
+    <script src="lib/oc/stickyFooter.js" data-group="resources"></script>
 
     <script src="//maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
@@ -168,6 +172,7 @@
     <script src="js/directives/ordertypeselector.js" data-group="source"></script>
     <script src="js/directives/creditcard.js" data-group="source"></script>
     <script src="js/directives/neworder.js" data-group="source"></script>
+
 
 </body>
 </html>

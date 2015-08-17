@@ -1,1 +1,185 @@
 /*do not make changes to this file. It will be overwritten by the css editor. Put theme changes in custom.css*/
+
+
+.container .navbar-nav li.active a:hover {
+    background-color: transparent;
+}
+.container .navbar-nav li.active a:focus {
+    background-color: transparent;
+}
+.navbar-default .navbar-nav .open > a {
+    background-color: transparent;
+}
+.navbar-default .navbar-nav .open > a:hover {
+    background-color: transparent;
+}
+.navbar-default .navbar-nav .open > a:focus {
+    background-color: transparent;
+}
+.navbar-nav li.dropdown li > a:hover {
+    background-color: transparent;
+}
+.navbar-nav li.dropdown li > a:focus {
+    background-color: transparent;
+}
+.navbar .container .navbar-nav li.active .fa-caret-down {
+    color: #fff;
+}
+.navbar-nav li.dropdown li > a {
+    color: #333333;
+}
+.navbar-nav li.dropdown li > a:hover {
+    color: #58676d;
+}
+.navbar .container .navbar-nav.pull-right li a i:first-of-type {
+    border-color: transparent;
+}
+.badge {
+}
+.badge {
+    color: #000000;
+}
+.navbar-default {
+    background-color: #58676d;
+}
+.container .navbar-nav li a {
+    color: #ffffff;
+}
+.container .navbar-nav li.active > a {
+    background-color: transparent;
+}
+.container .navbar-nav li.active > a {
+    color: #fff;
+}
+.navbar-default, .dropdown-mega {
+    border-color: #ffffff;
+}
+body {
+    background-color: #f0f0f0;
+}
+body {
+    color: #000000;
+}
+.text-primary {
+    color: #000000;
+}
+.text-info {
+    color: #545f61;
+}
+body a {
+    color: #31708f;
+}
+.btn-primary {
+    background-color: #0c2a3a;
+}
+.btn-primary, .btn-primary:hover {
+    color: #ffffff;
+}
+.btn-primary {
+    border-color: #081b24;
+}
+.btn-primary:hover {
+    background-color: #051118;
+}
+.btn-default {
+    background-color: #ffffff;
+}
+.btn-default, .btn-default:hover {
+    color: #333333;
+}
+.btn-default {
+    border-color: #cccccc;
+}
+.btn-default:hover {
+    background-color: #ebebeb;
+}
+.btn-info {
+    background-color: #5bc0de;
+}
+.btn-info, .btn-info:hover {
+    color: #ffffff;
+}
+.btn-info {
+    border-color: #46b8da;
+}
+.btn-info:hover {
+    background-color: #39b3d7;
+}
+.btn-success {
+    background-color: #5cb85c;
+}
+.btn-success, .btn-success:hover {
+    color: #ffffff;
+}
+.btn-success {
+    border-color: #4cae4c;
+}
+.btn-success:hover {
+    background-color: #47a447;
+}
+.btn-warning {
+    background-color: #f0ad4e;
+}
+.btn-warning, .btn-warning:hover {
+    color: #ffffff;
+}
+.btn-warning {
+    border-color: #eea236;
+}
+.btn-warning:hover {
+    background-color: #ed9c28;
+}
+.btn-danger {
+    background-color: #d9534f;
+}
+.btn-danger, .btn-danger:hover {
+    color: #ffffff;
+}
+.btn-danger {
+    border-color: #d43f3a;
+}
+.btn-danger:hover {
+    background-color: #d2322d;
+}
+.jumbotron {
+    background-color: #ffffff;
+}
+h2 .jumbotron {
+    color: #000000;
+}
+.panel-primary .panel-heading .panel-title {
+    background-color: #000000;
+}
+.panel-primary .panel-heading .panel-title {
+    color: #ffffff;
+}
+.panel-default .panel-heading .panel-title {
+    background-color: #f5f5f5;
+}
+.panel-default .panel-heading .panel-title {
+    color: #333333;
+}
+.panel {
+    background-color: #ffffff;
+}
+.panel-footer {
+    background-color: #f5f5f5;
+}
+.panel-category-list .well {
+    background-color: #ffffff;
+}
+.panel-category-list .well h5 {
+    color: #333333;
+}
+.panel-category-list .well {
+    border-color: #f0f0f0;
+}
+.panel-product-list .well {
+    background-color: #ffffff;
+}
+.panel-product-list .well {
+    color: #333333;
+}
+.panel-product-list .well {
+    border-color: #f0f0f0;
+}
