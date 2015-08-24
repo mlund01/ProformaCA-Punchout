@@ -143,13 +143,13 @@
                                 <i class="fa fa-bar-chart-o"></i>
                                 <span class="hidden-xs">{{'Reports' | r | xlat}}</span>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="cart" ng-class="{'active': isActive(['cart', 'checkout'])}">
-                            <a id="451qa_cart_link" ng-show="cartCount && user.CurrentOrderID" class="cart" href="cart">
+                            <a id="451qa_cart_link" ng-show="currentOrder.LineItems.length > 0 && user.CurrentOrderID" class="cart" href="cart">
                                 <span class="hidden-xs">{{'View Cart' | r | xlat}}</span>
                                 <i class="fa fa-shopping-cart visible-xs" title="View Cart"></i>
                             </a>
-                        </li>-->
+                        </li>
                     </ul>
                 </div>
             </div>
